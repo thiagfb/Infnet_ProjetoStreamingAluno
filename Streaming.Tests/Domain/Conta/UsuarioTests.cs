@@ -123,7 +123,7 @@ namespace Streaming.Tests.Domain.Conta
             PlayListMusica playlists = new PlayListMusica();
             playlists.AdicionarPlayListMusica("Gospel favorita", true, usuario, lstMusica);
 
-            usuario.LstPlayList.Add(playlists);
+            usuario.LstPlayListMusica.Add(playlists);
 
             //Assert
             Assert.NotNull(usuario.Email);
@@ -140,8 +140,8 @@ namespace Streaming.Tests.Domain.Conta
             Assert.True(usuario.LstCartao.Count > 0);
             Assert.Same(usuario.LstCartao[0], cartao);
 
-            Assert.True(usuario.LstPlayList.Count > 0);
-            Assert.Same(usuario.LstPlayList[0], playlists);
+            Assert.True(usuario.LstPlayListMusica.Count > 0);
+            Assert.Same(usuario.LstPlayListMusica[0], playlists);
         }
     }
 }

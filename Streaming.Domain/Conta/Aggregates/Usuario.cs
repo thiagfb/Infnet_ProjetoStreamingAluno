@@ -4,6 +4,7 @@ using Streaming.Domain.Transacao.Aggregates;
 using Streaming.Domain.Transacao.ValueObject;
 using System.Security.Cryptography;
 using System.Text;
+using Streaming.Domain.Notificacao;
 
 namespace Streaming.Domain.Conta.Aggregates
 {
@@ -27,7 +28,9 @@ namespace Streaming.Domain.Conta.Aggregates
 
         public List<Assinatura> LstAssinatura { get; set; } = new List<Assinatura>();
 
-        public List<PlayListMusica> LstPlayList { get; set; } = new List<PlayListMusica>();
+        public List<PlayListMusica> LstPlayListMusica { get; set; } = new List<PlayListMusica>();
+
+        public List<Notificacao.Notificacao> LstNotificacao { get; set; } = new List<Notificacao.Notificacao>();
 
 
         public Usuario CriarUsuario(String nome, String email, DateTime dataNascimento, String telefone, String senha)
@@ -109,7 +112,7 @@ namespace Streaming.Domain.Conta.Aggregates
 
         public void CriarPlaylist(string nome = "", bool publica = true)
         {
-            this.LstPlayList.Add(new PlayListMusica()
+            this.LstPlayListMusica.Add(new PlayListMusica()
             {
                 Nome = nome == null ? NOME_PLAYLIST : nome,
                 Publica = publica,
