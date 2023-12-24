@@ -22,7 +22,7 @@ namespace Streaming.Domain.Streaming.Aggregates
 
             if (String.IsNullOrEmpty(titulo))
             {
-                throw new ArgumentNullException(nameof(titulo), "Título do álbum é obrigatório.");
+                throw new Exception("Título do álbum é obrigatório.");
             }
             else
             {
@@ -33,7 +33,7 @@ namespace Streaming.Domain.Streaming.Aggregates
 
             if (anoLancamento <= 0)
             {
-                throw new ArgumentNullException(nameof(anoLancamento), "Ano de lançamento do álbum é obrigatório.");
+                throw new Exception("Ano de lançamento do álbum é obrigatório.");
             }
             else
             {
@@ -48,7 +48,7 @@ namespace Streaming.Domain.Streaming.Aggregates
             }
             else
             {
-                throw new ArgumentNullException(nameof(lstFaixa), "É necessário ter faixa músical.");
+                throw new Exception("É necessário ter faixa músical.");
             }
 
             return this;

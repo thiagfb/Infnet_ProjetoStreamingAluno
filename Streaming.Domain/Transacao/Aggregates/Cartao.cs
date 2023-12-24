@@ -9,12 +9,19 @@ namespace Streaming.Domain.Transacao.Aggregates
         private const int REPETICAO_TRANSACAO_MERCHANT = 1;
 
         public Guid Id { get; set; }
+
         public Boolean Ativo { get; set; }
+
         public Monetario Limite { get; set; }
+
         public String Numero { get; set; }
+
         public int CVV { get; set; }
+
         public Bandeira Bandeira { get; set; }
+
         public List<Transacao> LstTransacao { get; set; } = new List<Transacao>();
+
 
         public Cartao AdicionarCartao(Monetario limite, String numero, int CVV, Bandeira bandeira, Boolean ativo = true)
         {

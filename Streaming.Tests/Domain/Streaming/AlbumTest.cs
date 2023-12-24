@@ -32,11 +32,8 @@ namespace Streaming.Tests.Domain.Streaming
             List<Faixa> lstFaixa = new List<Faixa>();
             lstFaixa.Add(faixa.AdicionarFaixa(musica, 1, 12));
 
-            Artista artista = new Artista()
-            {
-                Id = Guid.NewGuid(),
-                Nome = "Cassiane"
-            };
+            Artista artista = new Artista();
+            artista = artista.AdicionarArtista("Cassiane");
 
             Album album = new Album();
             album = album.AdicionarAlbum("Inesquesível", artista, 2023, 13, lstFaixa);

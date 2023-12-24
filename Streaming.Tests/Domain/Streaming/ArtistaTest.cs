@@ -14,13 +14,10 @@ namespace Streaming.Tests.Domain.Streaming
         {
             String nome = "Cassiane";
 
-            Artista genero = new Artista()
-            {
-                Id  = Guid.NewGuid(),
-                Nome = nome
-            };            
+            Artista artista = new Artista();
+            artista = artista.AdicionarArtista(nome);
 
-            Assert.Equal(genero.Nome, nome);
+            Assert.Equal(artista.Nome, nome);
         }
     }
 }
