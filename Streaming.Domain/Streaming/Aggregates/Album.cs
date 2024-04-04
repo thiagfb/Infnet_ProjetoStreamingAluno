@@ -8,13 +8,13 @@ namespace Streaming.Domain.Streaming.Aggregates
 
         public String Titulo { get; set; }
 
-        public Artista Artista { get; set; }
+        public virtual Artista Artista { get; set; }
 
         public int AnoLancamento { get; set; }
 
         public Duracao? Duracao { get; set; }
 
-        public List<Faixa> LstFaixa { get; set; } = new List<Faixa>();
+        public virtual List<Faixa> LstFaixa { get; set; } = new List<Faixa>();
 
         public Album AdicionarAlbum(String titulo, Artista artista, int anoLancamento, Duracao? duracao, List<Faixa> lstFaixa)
         {

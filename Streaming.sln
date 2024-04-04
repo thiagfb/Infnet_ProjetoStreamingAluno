@@ -5,7 +5,13 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Streaming.Domain", "Streaming.Domain\Streaming.Domain.csproj", "{E0DFB054-4973-4700-82CA-A1DB345977E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Streaming.Tests", "Streaming.Tests\Streaming.Tests.csproj", "{A4947873-C5F7-4C10-9000-CE14289C2BBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Streaming.Tests", "Streaming.Tests\Streaming.Tests.csproj", "{A4947873-C5F7-4C10-9000-CE14289C2BBD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Streaming.Repository", "Streaming.Repository\Streaming.Repository.csproj", "{D5AC6A57-F0EF-472A-8114-C1ADC0DBBD61}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Streaming.Api", "Streaming.Api\Streaming.Api.csproj", "{5079E077-9EAA-4E25-BF7B-63D55535343A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Streaming.Application", "Streaming.Application\Streaming.Application.csproj", "{BE875608-B442-48CF-A2C6-BB5F33304BC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{A4947873-C5F7-4C10-9000-CE14289C2BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4947873-C5F7-4C10-9000-CE14289C2BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4947873-C5F7-4C10-9000-CE14289C2BBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5AC6A57-F0EF-472A-8114-C1ADC0DBBD61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5AC6A57-F0EF-472A-8114-C1ADC0DBBD61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5AC6A57-F0EF-472A-8114-C1ADC0DBBD61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5AC6A57-F0EF-472A-8114-C1ADC0DBBD61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5079E077-9EAA-4E25-BF7B-63D55535343A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5079E077-9EAA-4E25-BF7B-63D55535343A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5079E077-9EAA-4E25-BF7B-63D55535343A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5079E077-9EAA-4E25-BF7B-63D55535343A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE875608-B442-48CF-A2C6-BB5F33304BC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE875608-B442-48CF-A2C6-BB5F33304BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE875608-B442-48CF-A2C6-BB5F33304BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE875608-B442-48CF-A2C6-BB5F33304BC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

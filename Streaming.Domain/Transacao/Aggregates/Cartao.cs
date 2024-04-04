@@ -18,9 +18,9 @@ namespace Streaming.Domain.Transacao.Aggregates
 
         public int CVV { get; set; }
 
-        public Bandeira Bandeira { get; set; }
+        public virtual Bandeira Bandeira { get; set; }
 
-        public List<Transacao> LstTransacao { get; set; } = new List<Transacao>();
+        public virtual List<Transacao> LstTransacao { get; set; } = new List<Transacao>();
 
 
         public Cartao AdicionarCartao(Monetario limite, String numero, int CVV, Bandeira bandeira, Boolean ativo = true)

@@ -12,9 +12,9 @@ namespace Streaming.Domain.Streaming.Aggregates
         public Guid Id { get; set; }
         public string Nome { get; set; }
         public bool Publica { get; set; }
-        public Usuario Usuario { get; set; }
+        public virtual Usuario Usuario { get; set; }
         public DateTime DataCriacao { get; set; }
-        public List<Musica> LstMusica { get; set; } = new List<Musica>();
+        public virtual List<Musica> LstMusica { get; set; } = new List<Musica>();
 
         public PlayListMusica AdicionarPlayListMusica(string nome, bool publica, Usuario usuario, List<Musica> lstMusica)
         {

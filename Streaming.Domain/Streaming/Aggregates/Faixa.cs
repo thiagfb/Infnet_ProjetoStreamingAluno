@@ -9,11 +9,13 @@ namespace Streaming.Domain.Streaming.Aggregates
 {
     public class Faixa
     {
-        public Musica Musica { get; set; }
+        public Guid Id { get; set; }
+
+        public virtual Musica Musica { get; set; }
 
         public int Ordem { get; set; }
 
-        public Duracao Duracao { get; set; }
+        public virtual Duracao Duracao { get; set; }
 
         public Faixa AdicionarFaixa(Musica musica, int ordem, Duracao duracao)
         {

@@ -24,13 +24,13 @@ namespace Streaming.Domain.Conta.Aggregates
         
         public String Telefone { get; set; }
 
-        public List<Cartao> LstCartao { get; set; } = new List<Cartao>();
+        public virtual List<Cartao> LstCartao { get; set; } = new List<Cartao>();
 
-        public List<Assinatura> LstAssinatura { get; set; } = new List<Assinatura>();
+        public virtual List<Assinatura> LstAssinatura { get; set; } = new List<Assinatura>();
 
-        public List<PlayListMusica> LstPlayListMusica { get; set; } = new List<PlayListMusica>();
+        public virtual List<PlayListMusica> LstPlayListMusica { get; set; } = new List<PlayListMusica>();
 
-        public List<Notificacao.Notificacao> LstNotificacao { get; set; } = new List<Notificacao.Notificacao>();
+        public virtual List<Notificacao.Notificacao> LstNotificacao { get; set; } = new List<Notificacao.Notificacao>();
 
 
         public Usuario CriarUsuario(String nome, String email, DateTime dataNascimento, String telefone, String senha)

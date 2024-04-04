@@ -15,15 +15,15 @@ namespace Streaming.Domain.Streaming.Aggregates
 
         public String Titulo { get; set; }
 
-        public Genero Genero { get; set; }
+        public virtual Genero Genero { get; set; }
 
-        public Compositor Compositor { get; set; }
+        public virtual Compositor Compositor { get; set; }
 
         public String Letra { get; set; }
 
-        public DateTime DataComposicao { get; set; }
+        public DateTime? DataComposicao { get; set; }
 
-        public Musica AdicionarMusica(String titulo, Genero genero, Compositor compositor, String letra, DateTime DataComposicao)
+        public Musica AdicionarMusica(String titulo, Genero genero, Compositor compositor, String letra, DateTime? DataComposicao)
         {
             this.Id = Guid.NewGuid();
 
