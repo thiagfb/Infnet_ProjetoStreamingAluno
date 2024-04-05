@@ -24,6 +24,8 @@ namespace Streaming.Domain.Conta.Aggregates
         
         public String Telefone { get; set; }
 
+        public virtual Plano Plano { get; set; } = new Plano();
+
         public virtual List<Cartao> LstCartao { get; set; } = new List<Cartao>();
 
         public virtual List<Assinatura> LstAssinatura { get; set; } = new List<Assinatura>();
@@ -62,7 +64,7 @@ namespace Streaming.Domain.Conta.Aggregates
             this.AssinarPlano(plano, cartao);
 
             //Adicionar cartão na conta do usuário
-            this.AdicionarCartao(cartao);
+            //this.AdicionarCartao(cartao);
         }
 
         private void AdicionarCartao(Cartao cartao) => this.LstCartao.Add(cartao);
@@ -91,23 +93,25 @@ namespace Streaming.Domain.Conta.Aggregates
         private void AssinarPlano(Plano plano, Cartao cartao)
         {
             //Debitar o valor do plano no cartao
-            cartao.CriarTransacao(new Monetario(plano.Valor), new Merchant() { Nome = plano.Nome }, plano.Descricao);
+            //cartao.CriarTransacao(new Monetario(plano.Valor), new Merchant() { Nome = plano.Nome }, plano.Descricao);
 
             //Desativo caso tenha alguma assinatura ativa
-            DesativarAssinaturaAtiva();
+            //DesativarAssinaturaAtiva();
 
             DateTime dtAtivacao = DateTime.Now;
             DateTime dtAtivacaoFim = dtAtivacao.AddMonths(plano.Periodo);
 
+            this.Plano = plano;
 
             //Adiciona uma nova assinatura
-            this.LstAssinatura.Add(new Assinatura()
-            {
-                Ativo = true,
-                Plano = plano,
-                DataAtivacao = dtAtivacao,
-                DataAtivacaoFim = dtAtivacaoFim
-            });
+            //this.LstAssinatura.Add(new Assinatura()
+            //{
+            //    Ativo = true,
+            //    Plano = plano,
+            //    Id = plano.Id,
+            //    DataAtivacao = dtAtivacao,
+            //    DataAtivacaoFim = dtAtivacaoFim
+            //});
         }
 
         public void CriarPlaylist(string nome = "", bool publica = true)

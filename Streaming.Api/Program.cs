@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Streaming.Application.Conta;
 using Streaming.Application.Streaming;
 using Streaming.Application.Streaming.Profile;
 using Streaming.Application.Transacao;
@@ -49,6 +50,7 @@ builder.Services.AddScoped<PlayListMusicaService>();
 builder.Services.AddScoped<BandeiraService>();
 builder.Services.AddScoped<CartaoService>();
 builder.Services.AddScoped<TransacaoService>();
+builder.Services.AddScoped<UsuarioService>();
 
 builder.Services.AddCors(c =>
 {
