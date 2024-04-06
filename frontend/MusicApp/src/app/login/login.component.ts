@@ -39,6 +39,7 @@ export class LoginComponent {
       {
         next: (response) => {
           this.usuario = response;
+
           sessionStorage.setItem("user", JSON.stringify(this.usuario.nome));
           this.router.navigate(["/home"]);
         },

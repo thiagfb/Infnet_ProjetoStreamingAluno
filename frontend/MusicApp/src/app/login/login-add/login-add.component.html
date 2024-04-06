@@ -1,44 +1,11 @@
-<form class="example-form">
-    <table class="example-full-width" cellspacing="0"><tr>
-    <td><mat-form-field class="example-full-width">
-      <mat-label>First name</mat-label>
-      <input matInput>
-    </mat-form-field></td>
-  </tr></table>
-
-  <p>
-    <mat-form-field class="example-full-width">
-      <mat-label>Address</mat-label>
-      <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Address 2</mat-label>
-      <textarea matInput></textarea>
-    </mat-form-field>
-  </p>
-
-  <table class="example-full-width" cellspacing="0"><tr>
-    <td><mat-form-field class="example-full-width">
-      <mat-label>City</mat-label>
-      <input matInput placeholder="Ex. San Francisco">
-    </mat-form-field></td>
-    <td><mat-form-field class="example-full-width">
-      <mat-label>State</mat-label>
-      <input matInput placeholder="Ex. California">
-    </mat-form-field></td>
-    <td><mat-form-field class="example-full-width">
-      <mat-label>Postal Code</mat-label>
-      <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
-      <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-    </mat-form-field></td>
-  </tr></table>
-
+<div style="display: flex; justify-content: center;" class="centered-container">
+<form class="example-form" [formGroup]="usuarioForm" (ngSubmit)="submitForm()">
   <table class="example-full-width" cellspacing="0">
     <tr>
       <td>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Nome</mat-label>
-          <input matInput placeholder="Ex. Gomes Souza">
+          <input matInput placeholder="Ex. Gomes Souza" name="nome" id="nome" formControlName="nome">
         </mat-form-field>
       </td>
     </tr>
@@ -49,26 +16,64 @@
       <td>
         <mat-form-field class="example-full-width">
           <mat-label>Telefone</mat-label>
-          <input type="tel" matInput placeholder="21-99999-9999">
+          <input type="tel" matInput placeholder="21-99999-9999" name="telefone" id="telefone" formControlName="telefone">
         </mat-form-field>
       </td>
     </tr>
   </table>
 
+  <!--Email-->
   <table class="example-full-width" cellspacing="0">
     <tr>
       <td>
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Email</mat-label>
-          <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
-          @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
-            <mat-error>Insira e-mail válido</mat-error>
-          }
-          @if (emailFormControl.hasError('required')) {
-            <mat-error>Email é <strong>obrigatório</strong></mat-error>
-          }
+          <input matInput placeholder="nome@email.com.br" name="email" id="email" formControlName="email">
         </mat-form-field>
       </td>
     </tr>
   </table>
+
+  <!--Plano-->
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Plano</mat-label>
+          <input matInput placeholder="61a7726c-9b51-4beb-9303-9c3f61abdb2d" name="planoId" id="planoId" formControlName="planoId">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <!--Cartao-->
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Cartão</mat-label>
+          <input matInput placeholder="5235 8810 5480 7804" formControlName="cartao">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+
+  <!--Senha-->
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Senha</mat-label>
+          <input matInput placeholder="1" formControlName="senha">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+  <button mat-raised-button color="accent" type="submit">Cadastrar</button>
+  <br>
+
 </form>
+</div>

@@ -66,8 +66,8 @@ namespace Streaming.Application.Conta
 
         public UsuarioDto Autenticar(String email, String senha)
         {
-            //var usuario = this.UsuarioRepository.Find(x => x.Email == email && x.Senha == senha.EncryptPassword()).FirstOrDefault();
-            var usuario = this.UsuarioRepository.Find(x => x.Email == email && x.Senha == senha).FirstOrDefault();
+            var usuario = this.UsuarioRepository.Find(x => x.Email == email && x.Senha == senha.EncryptPassword()).FirstOrDefault();
+            //var usuario = this.UsuarioRepository.Find(x => x.Email == email && x.Senha == senha).FirstOrDefault();
             var result = this.Mapper.Map<UsuarioDto>(usuario);
             return result;
         }
