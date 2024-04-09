@@ -10,15 +10,11 @@
       <mat-icon>add</mat-icon>
       <span>Compositor</span>
     </button>
-    <button mat-menu-item disabled>
-      <mat-icon>voicemail</mat-icon>
-      <span>Check voice mail</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>notifications_off</mat-icon>
-      <span>Disable alerts</span>
+    <button mat-menu-item (click)="Banda();">
+      <mat-icon>add</mat-icon>
+      <span>Banda</span>
     </button>
   </mat-menu>
 </mat-toolbar>
 
-<h1>Seja bem-vindo {{ currentUserEmail }}</h1>
+<h1>Seja bem-vindo {{ currentUser }}</h1>

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Streaming.Application.Streaming.Dto;
+using Streaming.Application.Streaming.VO;
 using Streaming.Domain.Streaming.Aggregates;
 using Streaming.Repository.Repository;
 
@@ -8,12 +9,15 @@ namespace Streaming.Application.Streaming
     public class AlbumService
     {
         private AlbumRepository Repository { get; set; }
+        private MusicaRepository MusicaRepository { get; set; }
+
         private IMapper Mapper { get; set; }
 
-        public AlbumService(AlbumRepository repository, IMapper mapper)
+        public AlbumService(AlbumRepository repository, IMapper mapper, MusicaRepository musicaRepository)
         {
             Repository = repository;
             Mapper = mapper;
+            MusicaRepository = musicaRepository;
         }
 
         public AlbumDto Criar(AlbumDto dto)
@@ -52,6 +56,35 @@ namespace Streaming.Application.Streaming
         {
             var classe = this.Repository.GetAll();
             return this.Mapper.Map<IEnumerable<AlbumDto>>(classe);
+        }
+
+        public IEnumerable<AlbumMusicaVO> GetAllArtista(Guid Id)
+        {
+            var classe = this.Repository.Find(x => x.Artista.Id == Id).ToList();
+
+            var lstAlbum = new List<AlbumMusicaVO>();
+
+            foreach (var c in classe)
+            {
+                var album = new AlbumMusicaVO();
+                album.Id = c.Id;
+                album.Titulo = c.Titulo;
+                album.AnoLancamento = c.AnoLancamento;
+
+                foreach (var faixa in c.LstFaixa)
+                {
+                    var musica = new Musica();
+
+                    musica.Id = faixa.Musica.Id;
+                    musica.Titulo = faixa.Musica.Titulo;
+
+                    album.Musica.Add(musica);
+                }
+
+                lstAlbum.Add(album);
+            }      
+
+            return lstAlbum;
         }
     }
 }

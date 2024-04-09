@@ -15,5 +15,7 @@ namespace Streaming.Application.Streaming.Dto
         [Required]
         [MaxLength(50)]
         public String Nome { get; set; }
+
+        public String Backdrop { get; set; }
     }
 }

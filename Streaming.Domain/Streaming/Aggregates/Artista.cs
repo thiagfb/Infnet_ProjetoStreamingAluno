@@ -12,7 +12,9 @@ namespace Streaming.Domain.Streaming.Aggregates
 
         public String Nome { get; set; }
 
-        public Artista AdicionarArtista(String nome)
+        public String Backdrop { get; set; }
+
+        public Artista AdicionarArtista(String nome, String Backdrop)
         {
             if (String.IsNullOrEmpty(nome))
             {
@@ -23,6 +25,8 @@ namespace Streaming.Domain.Streaming.Aggregates
                 this.Id = Guid.NewGuid();
 
                 this.Nome = nome;
+
+                this.Backdrop = Backdrop;
 
                 return this;
             }

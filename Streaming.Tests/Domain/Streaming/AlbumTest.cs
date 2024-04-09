@@ -33,7 +33,7 @@ namespace Streaming.Tests.Domain.Streaming
             lstFaixa.Add(faixa.AdicionarFaixa(musica, 1, 12));
 
             Artista artista = new Artista();
-            artista = artista.AdicionarArtista("Cassiane");
+            artista = artista.AdicionarArtista("Cassiane", "c:\\imagem.jpg");
 
             Album album = new Album();
             album = album.AdicionarAlbum("Inesquesível", artista, 2023, 13, lstFaixa);

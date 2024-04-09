@@ -58,6 +58,7 @@ export class LoginAddComponent implements OnInit {
           this.usuario = response;
 
           sessionStorage.setItem("user", JSON.stringify(this.usuario.nome));
+          sessionStorage.setItem("idUsuario", JSON.stringify(this.usuario.id));
 
           this.router.navigate(['/home']);
         },

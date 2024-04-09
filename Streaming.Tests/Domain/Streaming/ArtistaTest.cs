@@ -15,7 +15,7 @@ namespace Streaming.Tests.Domain.Streaming
             String nome = "Cassiane";
 
             Artista artista = new Artista();
-            artista = artista.AdicionarArtista(nome);
+            artista = artista.AdicionarArtista(nome, "c:\\imagem.jpg");
 
             Assert.Equal(artista.Nome, nome);
         }

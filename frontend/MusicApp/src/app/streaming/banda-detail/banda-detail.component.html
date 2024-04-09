@@ -1,0 +1,23 @@
+<div *ngIf="banda != undefined">
+  <br/>
+  <img [src]="banda.backdrop" alt="imagem do album">
+  <br />
+  <span>Nome: {{banda.nome}}</span>
+</div>
+
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel hideToggle *ngFor="let album of albuns">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Album: {{ album.titulo }}
+      </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div *ngFor="let musica of album.musica">
+        <mat-checkbox (change)="checkboxChanged($event, musica.id, banda.id)"></mat-checkbox>
+        <mat-action-row>
+          {{ musica.titulo }}
+        </mat-action-row>
+      </div>
+  </mat-expansion-panel>
+</mat-accordion>

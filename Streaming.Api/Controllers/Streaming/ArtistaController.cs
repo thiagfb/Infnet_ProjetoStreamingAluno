@@ -96,5 +96,17 @@ namespace Streaming.Api.Controllers.Streaming
 
             return Ok(result);
         }
+
+        //[HttpGet("{id}/albums")]
+        //public IActionResult AssociarAlbum(AlbumDto dto)
+        //{
+        //    if (ModelState is { IsValid: false })
+        //        return BadRequest();
+
+        //    var result = this._artistaService.AssociarAlbum(dto);
+
+        //    return Created($"/banda/{result.Id}/albums/{result.Id}", result);
+
+        //}
     }
 }

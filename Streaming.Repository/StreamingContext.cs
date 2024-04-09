@@ -23,6 +23,7 @@ namespace Streaming.Repository
         public DbSet<Cartao> Cartoes { get; set; }
         public DbSet<Bandeira> Bandeira { get; set; }
         public DbSet<Transacao> Transacao { get; set; }
+        public DbSet<MusicaPlayList> MusicaPlayList { get; set; }
 
         public StreamingContext(DbContextOptions<StreamingContext> options) : base(options)
         {
@@ -32,6 +33,7 @@ namespace Streaming.Repository
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(StreamingContext).Assembly);
+            modelBuilder.Entity<MusicaPlayList>().HasNoKey();
             base.OnModelCreating(modelBuilder);
         }
 

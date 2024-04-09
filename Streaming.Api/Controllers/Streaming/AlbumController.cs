@@ -96,5 +96,18 @@ namespace Streaming.Api.Controllers.Streaming
 
             return Ok(result);
         }
+
+        [HttpGet("/artista/{id}")]
+        public IActionResult GetAlbumArtista(Guid id)
+        {
+            var result = this._service.GetAllArtista(id);
+
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(result);
+        }
     }
 }

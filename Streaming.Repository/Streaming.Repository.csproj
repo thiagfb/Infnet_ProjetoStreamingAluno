@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Mapping\Conta\" />
     <Folder Include="Mapping\Transacao\" />
-    <Folder Include="Mapping\Streaming\" />
     <Folder Include="Mapping\Notificacao\" />
     <Folder Include="Migrations\" />
   </ItemGroup>

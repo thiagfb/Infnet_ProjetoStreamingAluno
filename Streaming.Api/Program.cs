@@ -37,6 +37,7 @@ builder.Services.AddScoped<PlanoRepository>();
 builder.Services.AddScoped<PlayListMusicaRepository>();
 builder.Services.AddScoped<TransacaoRepository>();
 builder.Services.AddScoped<UsuarioRepository>();
+builder.Services.AddScoped<MusicaPlayListRepository>();
 
 //Services
 builder.Services.AddScoped<AlbumService>();
@@ -51,6 +52,7 @@ builder.Services.AddScoped<BandeiraService>();
 builder.Services.AddScoped<CartaoService>();
 builder.Services.AddScoped<TransacaoService>();
 builder.Services.AddScoped<UsuarioService>();
+builder.Services.AddScoped<MusicaPlayListService>();
 
 builder.Services.AddCors(c =>
 {
