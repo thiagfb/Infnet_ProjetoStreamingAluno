@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Streaming.Application.Streaming;
 using Streaming.Application.Streaming.Dto;
 
@@ -90,6 +91,8 @@ namespace Streaming.Api.Controllers.Streaming
         }
 
         [HttpGet]
+        //Sem necessidade de autenticação.
+        [AllowAnonymous]
         public IActionResult GetAll()
         {
             var result = this._artistaService.GetAll();

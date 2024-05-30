@@ -1,4 +1,5 @@
 ﻿using Azure.Core;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Streaming.Application.Conta;
 using Streaming.Application.Conta.Dto;
@@ -7,6 +8,7 @@ namespace Streaming.Api.Controllers.Conta
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Streaming-user")]
     public class UsuarioController : ControllerBase
     {
         private UsuarioService _service;

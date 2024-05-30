@@ -1,3 +1,4 @@
+using IdentityServer4.AccessTokenValidation;
 using Microsoft.EntityFrameworkCore;
 using Streaming.Application.Conta;
 using Streaming.Application.Streaming;
@@ -22,6 +23,23 @@ builder.Services.AddDbContext<StreamingContext>(c =>
 });
 
 builder.Services.AddAutoMapper(typeof(ArtistaProfile).Assembly);
+
+builder.Services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+    .AddIdentityServerAuthentication(options =>
+    {
+        options.Authority = "https://localhost:7157";
+        options.ApiName = "Streaming-api";
+        options.ApiSecret = "StreamingSecret";
+        options.RequireHttpsMetadata = true;
+    });
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("streaming-role-user", p =>
+    {
+        p.RequireClaim("role", "Streaming-user");
+    });
+});
 
 //Repositories
 builder.Services.AddScoped<AlbumRepository>();
@@ -79,6 +97,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
