@@ -7,10 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="Migrations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Mapping\Conta\" />
     <Folder Include="Mapping\Transacao\" />
     <Folder Include="Mapping\Notificacao\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
   <ItemGroup>
