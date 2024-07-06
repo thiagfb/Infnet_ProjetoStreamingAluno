@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Streaming.Application.Admin.Dto;
 using Streaming.Domain.Admin.Aggregates;
+using Streaming.Domain.Core.Extension;
 using Streaming.Repository.Repository;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,13 @@ namespace Streaming.Application.Admin
             var usuario = this.mapper.Map<UsuarioAdmin>(dto);
             usuario.CriptografarSenha();
             this.Repository.Save(usuario);
+        }
+
+        public UsuarioAdmin Authenticate(string email, string password)
+        {
+            var passwordCipher = password.EncryptPassword();
+            var user = this.Repository.GetUsuarioAdminByEmailAndPassword(email, passwordCipher);
+            return user;
         }
     }
 }

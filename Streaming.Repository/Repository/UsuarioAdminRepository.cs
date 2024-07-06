@@ -13,6 +13,11 @@ namespace Streaming.Repository.Repository
         public UsuarioAdminRepository(StreamingAdminContext context) : base(context)
         {
         }
+
+        public UsuarioAdmin GetUsuarioAdminByEmailAndPassword(string email, string password)
+        {
+            return this.Find(x => x.EMail == email && x.Password == password).FirstOrDefault();
+        }
     }
 
 }

@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Streaming.Application.Streaming;
 using Streaming.Application.Streaming.Dto;
 
 namespace Streaming.Admin.Controllers
 {
+    [Authorize]
     public class ArtistaController : Controller
     {
         private ArtistaService artistaService;
