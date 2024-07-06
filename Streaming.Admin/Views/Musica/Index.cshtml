@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Streaming.Application.Streaming.Dto.MusicaDto>
+
+<div>
+    <a class="btn btn-primary" role="button" href="/Musica/Criar">Criar Música</a>
+</div>
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Título</td>
+                <td>Genero</td>
+                <td>Compositor</td>
+                <td>Data da composição</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Titulo</td>
+                    <td>@item.Genero.Tipo</td>
+                    <td>@item.Compositor.Nome</td>
+                    <td>@item.DataComposicao?.ToString("dd/MM/yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

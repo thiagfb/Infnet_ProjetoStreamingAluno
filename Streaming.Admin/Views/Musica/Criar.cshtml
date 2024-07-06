@@ -1,0 +1,47 @@
+﻿@model Streaming.Application.Streaming.Dto.MusicaDto;
+
+
+<form method="post" asp-controller="Musica" asp-action="Salvar">
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Nome</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(x => x.Titulo, new { @class = "form-control" })
+            <span class="form-field-invalid" asp-validation-for="Titulo"></span>
+        </div>
+    </div>
+
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Gênero</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(x => x.GeneroId, new { @class = "form-control" })
+            <span class="form-field-invalid" asp-validation-for="GeneroId"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Compositor</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(x => x.Compositorid, new { @class = "form-control" })
+            <span class="form-field-invalid" asp-validation-for="Compositorid"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Leta</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(x => x.Letra, new { @class = "form-control" })
+            <span class="form-field-invalid" asp-validation-for="Letra"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Data da composição</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(x => x.DataComposicao, new { @class = "form-control" })
+            <span class="form-field-invalid" asp-validation-for="DataComposicao"></span>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Criar</button>
+</form>
