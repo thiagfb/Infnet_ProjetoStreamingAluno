@@ -53,13 +53,6 @@ jobs:
         with:
           name: .net-app
       
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_6542C119381B46D5B03128AE4BA27E77 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_1DA00B8341684011BA0AB5B4C6EEA170 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_62F06295FE3F4E0FB8B0FE343384F702 }}
-
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
