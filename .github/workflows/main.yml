@@ -28,11 +28,11 @@ jobs:
         password: ${{secrets.REGISTRY_PASSWORD}}
 
     -name: Build image and push
-      uses: docker/build-push-action@v5
-      with: 
-        push: true
-        tags: ${{secrets.REGISTRY_LOGIN_SERVER}}/streaming-std:${{github.sha}}
-        file: Streaming.STS/Dockerfile
-        context: .
+     uses: docker/build-push-action@v5
+     with: 
+       push: true
+       tags: ${{secrets.REGISTRY_LOGIN_SERVER}}/streaming-std:${{github.sha}}
+       file: Streaming.STS/Dockerfile
+       context: .
           
       
