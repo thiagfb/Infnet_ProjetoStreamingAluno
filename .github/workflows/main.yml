@@ -1,0 +1,20 @@
+name: Deploy Streaming STS
+
+on:
+  push:
+    branches:
+      - main
+  paths:
+      - Streaming.STS/**
+jobs: 
+  build-deploy-dotnet:
+    runs-on: ubuntu-latest
+      defaults:
+        run:
+          shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+ 
