@@ -6,6 +6,6 @@
 
         /*não é recomendavél trafegar nome e e-mail, mas para conhecimento será usado*/
         public String Nome { get; set; }
-        public String Email { get; set;}
+        public String Email { get; set; }
     }
 }
