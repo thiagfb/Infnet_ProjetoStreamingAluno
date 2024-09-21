@@ -33,6 +33,7 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build ./Streaming.STS --configuration Release
+        continue-on-error: false  # Isso fará com que o job falhe se o build falhar
       
       - name: Docker Login
         uses: azure/docker-login@v1
