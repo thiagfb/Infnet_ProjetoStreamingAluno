@@ -5,8 +5,7 @@ env:
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
   paths:
       - Streaming.STS/**
 permissions:
