@@ -1,6 +1,6 @@
 ﻿using IdentityModel;
 using IdentityServer4.Validation;
-using SpotifyLike.STS.Data;
+using Streaming.STS.Data;
 using System.Security.Cryptography;
 using System.Text;
 

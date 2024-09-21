@@ -1,6 +1,6 @@
-﻿using SpotifyLike.STS.Model;
+﻿using Streaming.STS.Model;
 
-namespace SpotifyLike.STS.Data
+namespace Streaming.STS.Data
 {
     public interface IIdentityRepository
     {

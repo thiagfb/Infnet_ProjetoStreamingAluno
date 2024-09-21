@@ -1,9 +1,9 @@
 ﻿using Dapper;
 using Microsoft.Extensions.Options;
-using SpotifyLike.STS.Model;
+using Streaming.STS.Model;
 using System.Data.SqlClient;
 
-namespace SpotifyLike.STS.Data
+namespace Streaming.STS.Data
 {
     public class IdentityRepository : IIdentityRepository
     {

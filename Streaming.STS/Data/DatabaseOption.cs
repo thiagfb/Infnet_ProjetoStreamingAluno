@@ -1,4 +1,4 @@
-﻿namespace SpotifyLike.STS.Data
+﻿namespace Streaming.STS.Data
 {
     public class DatabaseOption
     {

@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
-using SpotifyLike.STS;
-using SpotifyLike.STS.Data;
+using Streaming.STS;
+using Streaming.STS.Data;
 using Streaming.STS.GrantType;
 using Streaming.STS.ProfileService;
 

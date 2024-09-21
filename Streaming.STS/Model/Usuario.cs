@@ -1,4 +1,4 @@
-﻿namespace SpotifyLike.STS.Model
+﻿namespace Streaming.STS.Model
 {
     public class Usuario
     {

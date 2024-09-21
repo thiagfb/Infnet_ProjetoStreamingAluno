@@ -1,7 +1,7 @@
 ﻿using IdentityServer4.Models;
 using IdentityServer4;
 
-namespace SpotifyLike.STS
+namespace Streaming.STS
 {
     public class IdentityServerConfiguration
     {
