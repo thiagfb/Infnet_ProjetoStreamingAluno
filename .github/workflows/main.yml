@@ -47,4 +47,4 @@ jobs:
           push: true
           file: Streaming.STS/Dockerfile
           context: .
-          tags: ${{secrets.REGISTRY_LOGIN_SERVER}}/spotify-sts:${{github.sha}}
+          tags: ${{secrets.REGISTRY_LOGIN_SERVER}}/streaming-sts:${{github.sha}}
