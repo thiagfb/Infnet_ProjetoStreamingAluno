@@ -64,7 +64,7 @@ namespace Streaming.Domain.Conta.Aggregates
             this.AssinarPlano(plano, cartao);
 
             //Adicionar cartão na conta do usuário
-            //this.AdicionarCartao(cartao);
+            this.AdicionarCartao(cartao);
         }
 
         private void AdicionarCartao(Cartao cartao) => this.LstCartao.Add(cartao);
@@ -104,14 +104,14 @@ namespace Streaming.Domain.Conta.Aggregates
             this.Plano = plano;
 
             //Adiciona uma nova assinatura
-            //this.LstAssinatura.Add(new Assinatura()
-            //{
-            //    Ativo = true,
-            //    Plano = plano,
-            //    Id = plano.Id,
-            //    DataAtivacao = dtAtivacao,
-            //    DataAtivacaoFim = dtAtivacaoFim
-            //});
+            this.LstAssinatura.Add(new Assinatura()
+            {
+                Ativo = true,
+                Plano = plano,
+                Id = plano.Id,
+                DataAtivacao = dtAtivacao,
+                DataAtivacaoFim = dtAtivacaoFim
+            });
         }
 
         public void CriarPlaylist(string nome = "", bool publica = true)
