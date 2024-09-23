@@ -82,6 +82,7 @@ builder.Services.AddCors(c =>
 
     });
 });
+builder.Services.AddApplicationInsightsTelemetry();
 
 
 var app = builder.Build();
